@@ -9,7 +9,7 @@ from pydub import AudioSegment      #type: ignore
 import matplotlib.pyplot as plt     #type: ignore
 from scipy.io import wavfile        #type: ignore
 
-#Must have ffmpeg installed
+#MUST have ffmpeg installed
 mp3 = "Happy.mp3"
 mp3_audio = AudioSegment.from_file(file=mp3, format="mp3") #Read the mp3
 mp3_audio = mp3_audio.set_channels(1)
@@ -20,3 +20,5 @@ mp3_audio.export(wname, format="wav") #Convert to wav format
 FS, data = wavfile.read(wname) #Read the wav file
 plt.specgram(data, Fs=FS, NFFT=128, noverlap=0) #Plot
 plt.show()
+
+#It's very hard to plot notes from a spectrogram.
